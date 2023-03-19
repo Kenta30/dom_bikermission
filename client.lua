@@ -17,11 +17,11 @@ local function setupMissionOnEnter()
     model = Config.Mission.CarModel
     requestModels(model)
     missionNPCTable = {}
-    TargetCar = CreateVehicle(GetHashKey(Config.Mission.CarModel), Config.Mission.CarLocation, true, true)
+    TargetCar = CreateVehicle(Config.Mission.CarModel, Config.Mission.CarLocation, true, true)
     for i = 1, #Config.Mission.NPCLocations, 1 do 
-        missionNPCTable[i] = CreatePed(1, GetHashKey(Config.Mission.NPCModel), Config.Mission.NPCLocations[i], true, true)
-        GiveWeaponToPed(missionNPCTable[i], GetHashKey('weapon_pistol'), 250, false, true)
-        SetCurrentPedWeapon(missionNPCTable[i], GetHashKey('weapon_pistol'), true)
+        missionNPCTable[i] = CreatePed(1, Config.Mission.NPCModel, Config.Mission.NPCLocations[i], true, true)
+        GiveWeaponToPed(missionNPCTable[i], joaat('weapon_pistol'), 250, false, true)
+        SetCurrentPedWeapon(missionNPCTable[i], joaat('weapon_pistol'), true)
         SetPedCombatAbility(missionNPCTable[i], 100)
         SetPedCombatAttributes(missionNPCTable[i], 1424, true)
         SetPedRelationshipGroupHash(missionNPCTable[i], 'AGGRESSIVE_INVESTIGATE')
@@ -93,7 +93,7 @@ local function startMissionBoxOnExter()
     local model = Config.StartMission.NPCModel
     requestModels(model)
 
-    startMissionNPC = CreatePed(1, GetHashKey(Config.StartMission.NPCModel), Config.StartMission.NPCLocation, Config.StartMission.Heading, false, false)
+    startMissionNPC = CreatePed(1, Config.StartMission.NPCModel, Config.StartMission.NPCLocation, Config.StartMission.Heading, false, false)
         FreezeEntityPosition(startMissionNPC, true)
         SetEntityInvincible(startMissionNPC, true)
         SetBlockingOfNonTemporaryEvents(startMissionNPC, true)
