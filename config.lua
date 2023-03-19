@@ -5,7 +5,7 @@ Config.Debug = false
 Config.StartMission = {
     NPCLocation = vec3(-22.124, -191.931, 51.363),
     Heading = (157.827),
-    NPCModel = 'g_m_y_mexgoon_01',
+    NPCModel = `g_m_y_mexgoon_01`,
 
     ZoneLocation = vec3(-20.418, -199.074, 55.352),
     ZoneSize = vec3(18,100,10),
@@ -20,7 +20,7 @@ Config.Mission = {
     ZoneLocation = vec3(716.264, 4175.508, 40.709),
     ZoneRadius = 300,
 
-    NPCModel = 'g_m_y_lost_02',
+    NPCModel = `g_m_y_lost_02`,
     NPCLocations = {
         vec4(730.928, 4176.617, 40.709, 322.438),
         vec4(724.395, 4185.263, 40.709, 202.297),
@@ -31,7 +31,7 @@ Config.Mission = {
         vec4(707.531, 4172.75, 40.886, 255.927),
         vec4(709.585, 4170.839, 40.715, 260.501)
     },
-    CarModel = 'gburrito',
+    CarModel = `gburrito`,
     CarLocation = vec4(718.829, 4177.196, 40.521, 255.803),
 
     DropOffLocations = {
