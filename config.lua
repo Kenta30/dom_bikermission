@@ -2,6 +2,12 @@ Config = {}
 
 Config.Debug = false
 
+Config.Cooldown = {
+    OneTime = false, -- If true once completed you cant do again until server restart
+    CooldownMin = 3600000, -- 1 hour
+    CooldownMax = 7200000, -- 2 hours
+}
+
 Config.StartMission = {
     NPCLocation = vec3(-22.124, -191.931, 51.363),
     Heading = (157.827),
