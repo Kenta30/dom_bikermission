@@ -13,7 +13,7 @@ Config.StartMission = {
 
     TargetIcon = 'fa-solid fa-flask',
     TargetDistance = 1.7,
-    TargetLabel = 'Start Job'
+    TargetLabel = 'Kezdés'
 }
 
 Config.Mission = {
@@ -41,7 +41,7 @@ Config.Mission = {
     },
     DropOffSize = vec3(4, 4, 4),
     DropOffTargetIcon = 'fa-solid fa-car',
-    DropOffTargetLabel = 'Drop Off Vehicle',
+    DropOffTargetLabel = 'Jármű leadás',
 
     Reward = 'money',
     RewardAmount = 25000,
@@ -50,32 +50,32 @@ Config.Mission = {
 Config.Notification = {
     CantStartMission = {
         title = 'Boss',
-        description = 'I have nothing for you right now',
+        description = 'Most nincs semmi meló',
         type = 'error',
-        position = 'top-right'
+        position = 'center-right'
     },
     StartMission = {
         title = 'Boss',
-        description = 'Go get the truck for me',
+        description = 'Hozd el a furgont',
         type = 'inform',
-        position = 'top-right'
+        position = 'center-right'
     },
     GotDropOff = {
         title = 'Boss',
-        description = 'Go drop off the truck',
+        description = 'Add le a furgont',
         type = 'inform',
-        position = 'top-right'
+        position = 'center-right'
     },
     CompletedJob = {
         title = 'Boss',
-        description = 'You completed the job',
+        description = 'Megcsináltad',
         type = 'success',
-        position = 'top-right'
+        position = 'center-right'
     },
     NotEnoughSpace = {
         title = 'Boss',
-        description = 'You don\'t have enough space',
+        description = 'Nincs nálad elég hely',
         type = 'error',
-        position = 'top-right'
+        position = 'center-right'
     }
 }
