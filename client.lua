@@ -3,8 +3,8 @@ local Input = lib.inputDialog
 local Zone = lib.zones
 
 local function requestModels(model)
-    RequestModel(model)
-    while not HasModelLoaded(model) do 
+    RequestModel(GetHashKey(model))
+    while not HasModelLoaded(GetHashKey(model)) do 
         Wait(500)
     end 
 end 
@@ -23,7 +23,6 @@ local function setupMissionOnEnter()
         GiveWeaponToPed(missionNPCTable[i], joaat('weapon_pistol'), 250, false, true)
         SetCurrentPedWeapon(missionNPCTable[i], joaat('weapon_pistol'), true)
         SetPedCombatAbility(missionNPCTable[i], 100)
-        SetPedCombatAttributes(missionNPCTable[i], 1424, true)
         SetPedRelationshipGroupHash(missionNPCTable[i], 'AGGRESSIVE_INVESTIGATE')
         Wait(500)
     end 
