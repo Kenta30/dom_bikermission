@@ -14,18 +14,20 @@ local function setupMissionOnEnter()
     RemoveBlip(targetBlip)
     local model = Config.Mission.NPCModel
     requestModels(model)
-    model = Config.Mission.CarModel
-    requestModels(model)
+    local carmodel = Config.Mission.CarModel
+    requestModels(carmodel)
     missionNPCTable = {}
-    TargetCar = CreateVehicle(Config.Mission.CarModel, Config.Mission.CarLocation, true, true)
+    TargetCar = CreateVehicle(Config.Mission.CarModel, Config.Mission.CarLocation, true, false)
     for i = 1, #Config.Mission.NPCLocations, 1 do 
-        missionNPCTable[i] = CreatePed(1, Config.Mission.NPCModel, Config.Mission.NPCLocations[i], true, true)
+        missionNPCTable[i] = CreatePed(1, Config.Mission.NPCModel, Config.Mission.NPCLocations[i], true, false)
         GiveWeaponToPed(missionNPCTable[i], `weapon_pistol`, 250, false, true)
-        SetCurrentPedWeapon(missionNPCTable[i], joaat('weapon_pistol'), true)
+        SetCurrentPedWeapon(missionNPCTable[i], `weapon_pistol`, true)
         SetPedCombatAbility(missionNPCTable[i], 100)
         SetPedRelationshipGroupHash(missionNPCTable[i], 'AGGRESSIVE_INVESTIGATE')
         Wait(500)
-    end 
+    end
+    SetModelAsNoLongerNeeded(model)
+    SetModelAsNoLongerNeeded(carmodel)
 
     Citizen.CreateThread(function()
         local toggle = true
@@ -96,6 +98,7 @@ local function startMissionBoxOnExter()
         FreezeEntityPosition(startMissionNPC, true)
         SetEntityInvincible(startMissionNPC, true)
         SetBlockingOfNonTemporaryEvents(startMissionNPC, true)
+        SetModelAsNoLongerNeeded(model)
 
     local startMissionOptions = {{
         name = 'startMission:option1',
